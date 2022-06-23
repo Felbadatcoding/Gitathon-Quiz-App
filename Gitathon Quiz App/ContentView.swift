@@ -40,9 +40,9 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             LinearGradient(colors: [.red, .yellow],
-                         startPoint: .topTrailing,
-                         endPoint: .bottomTrailing)
-                        .edgesIgnoringSafeArea(.all)
+                           startPoint: .topTrailing,
+                           endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
             
             VStack {
                 VStack{
@@ -56,21 +56,33 @@ struct ContentView: View {
                 
                 HStack {
                     VStack {
-                        Button(questions[currentQuestion].option1) {
+                        Button {
                             didTapOption(optionNumber: 1)
+                        } label: {
+                            Image(systemName: "triangle.fill")
+                            Text(questions[currentQuestion].option1)
                         }
-                        Button(questions[currentQuestion].option2) {
+                        Button {
                             didTapOption(optionNumber: 2)
+                        } label: {
+                            Image(systemName: "circle.fill")
+                            Text(questions[currentQuestion].option2)
                         }
                     }
                     .padding()
                     VStack {
-                        Button(questions[currentQuestion].option3) {
-                            didTapOption(optionNumber: 3)
+                        Button {
+                                    didTapOption(optionNumber: 3)
+                                } label: {
+                                    Image(systemName: "diamond.fill")
+                                    Text(questions[currentQuestion].option3)
                         }
-                        Button(questions[currentQuestion].option4) {
-                            didTapOption(optionNumber: 4)
-                        }
+                        Button {
+                                    didTapOption(optionNumber: 4)
+                                } label: {
+                                    Image(systemName: "square.fill")
+                                    Text(questions[currentQuestion].option4)
+                                }
                     }
                     .padding()
                 }
@@ -81,16 +93,16 @@ struct ContentView: View {
                 Alert(title: Text(isCorrect ? "Correct" : "Wrong"),
                       message: Text(isCorrect ? "Congrats, you are kinda smart." : "This is outrageous, with such easy questions, how can you be getting this wrong?!"),
                       dismissButton: .default(Text("OK")) {
-                        currentQuestion += 1
-                        
-                        if currentQuestion == questions.count {
-                            isModalPresented = true
-                            currentQuestion = 0
-                        }
-                      })
+                    currentQuestion += 1
+                    
+                    if currentQuestion == questions.count {
+                        isModalPresented = true
+                        currentQuestion = 0
+                    }
+                })
             }.sheet(isPresented: $isModalPresented) {
                 ResultsScreen(score: correctAnswers, totalQuestions: questions.count)
-        }
+            }
         }
     }
     
