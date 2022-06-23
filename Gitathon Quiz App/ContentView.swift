@@ -63,6 +63,7 @@ struct ContentView: View {
                             didTapOption(optionNumber: 1)
                         } label: {
                             Image(systemName: "triangle.fill")
+                                .foregroundColor(.green)
                             Text(questions[currentQuestion].option1)
                         }
                         Button {
@@ -78,12 +79,14 @@ struct ContentView: View {
                                     didTapOption(optionNumber: 3)
                                 } label: {
                                     Image(systemName: "diamond.fill")
+                                        .foregroundColor(.yellow)
                                     Text(questions[currentQuestion].option3)
                         }
                         Button {
                                     didTapOption(optionNumber: 4)
                                 } label: {
                                     Image(systemName: "square.fill")
+                                        .foregroundColor(.red)
                                     Text(questions[currentQuestion].option4)
                                 }
                     }
