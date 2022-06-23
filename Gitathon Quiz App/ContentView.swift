@@ -38,46 +38,59 @@ struct ContentView: View {
     @State var isModalPresented = false
     
     var body: some View {
-        VStack {
-            Text(questions[currentQuestion].title)
-                .padding()
+        ZStack {
+            LinearGradient(colors: [.red, .yellow],
+                         startPoint: .topTrailing,
+                         endPoint: .bottomTrailing)
+                        .edgesIgnoringSafeArea(.all)
             
-            HStack {
-                VStack {
-                    Button(questions[currentQuestion].option1) {
-                        didTapOption(optionNumber: 1)
-                    }
-                    Button(questions[currentQuestion].option2) {
-                        didTapOption(optionNumber: 2)
-                    }
+            VStack {
+                VStack{
+                    Text(questions[currentQuestion].title)
+                        .padding()
+                    Image(systemName: "calendar")
+                        .foregroundColor(.black)
+                        .font(.system(size:30))
+                    
                 }
-                .padding()
-                VStack {
-                    Button(questions[currentQuestion].option3) {
-                        didTapOption(optionNumber: 3)
+                
+                HStack {
+                    VStack {
+                        Button(questions[currentQuestion].option1) {
+                            didTapOption(optionNumber: 1)
+                        }
+                        Button(questions[currentQuestion].option2) {
+                            didTapOption(optionNumber: 2)
+                        }
                     }
-                    Button(questions[currentQuestion].option4) {
-                        didTapOption(optionNumber: 4)
+                    .padding()
+                    VStack {
+                        Button(questions[currentQuestion].option3) {
+                            didTapOption(optionNumber: 3)
+                        }
+                        Button(questions[currentQuestion].option4) {
+                            didTapOption(optionNumber: 4)
+                        }
                     }
+                    .padding()
                 }
                 .padding()
             }
-            .padding()
+            .alert(isPresented: $isAlertPresented) {
+                
+                Alert(title: Text(isCorrect ? "Correct" : "Wrong"),
+                      message: Text(isCorrect ? "Congrats, you are kinda smart." : "This is outrageous, with such easy questions, how can you be getting this wrong?!"),
+                      dismissButton: .default(Text("OK")) {
+                        currentQuestion += 1
+                        
+                        if currentQuestion == questions.count {
+                            isModalPresented = true
+                            currentQuestion = 0
+                        }
+                      })
+            }.sheet(isPresented: $isModalPresented) {
+                ResultsScreen(score: correctAnswers, totalQuestions: questions.count)
         }
-        .alert(isPresented: $isAlertPresented) {
-            
-            Alert(title: Text(isCorrect ? "Correct" : "Wrong"),
-                  message: Text(isCorrect ? "Congrats, you are kinda smart." : "This is outrageous, with such easy questions, how can you be getting this wrong?!"),
-                  dismissButton: .default(Text("OK")) {
-                    currentQuestion += 1
-                    
-                    if currentQuestion == questions.count {
-                        isModalPresented = true
-                        currentQuestion = 0
-                    }
-                  })
-        }.sheet(isPresented: $isModalPresented) {
-            ResultsScreen(score: correctAnswers, totalQuestions: questions.count)
         }
     }
     
