@@ -11,6 +11,8 @@
 		1651FA1F28643A8000941BE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651FA1E28643A8000941BE9 /* ContentView.swift */; };
 		1651FA2128643A8300941BE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1651FA2028643A8300941BE9 /* Assets.xcassets */; };
 		1651FA2428643A8300941BE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1651FA2328643A8300941BE9 /* Preview Assets.xcassets */; };
+		4C318A422864410C00B510B4 /* ResultsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C318A412864410C00B510B4 /* ResultsScreen.swift */; };
+		4C318A442864412600B510B4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C318A432864412600B510B4 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		1651FA1E28643A8000941BE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1651FA2028643A8300941BE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1651FA2328643A8300941BE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4C318A412864410C00B510B4 /* ResultsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsScreen.swift; sourceTree = "<group>"; };
+		4C318A432864412600B510B4 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				1651FA1C28643A8000941BE9 /* Gitathon_Quiz_AppApp.swift */,
 				1651FA1E28643A8000941BE9 /* ContentView.swift */,
+				4C318A412864410C00B510B4 /* ResultsScreen.swift */,
+				4C318A432864412600B510B4 /* Question.swift */,
 				1651FA2028643A8300941BE9 /* Assets.xcassets */,
 				1651FA2228643A8300941BE9 /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1651FA1F28643A8000941BE9 /* ContentView.swift in Sources */,
+				4C318A442864412600B510B4 /* Question.swift in Sources */,
+				4C318A422864410C00B510B4 /* ResultsScreen.swift in Sources */,
 				1651FA1D28643A8000941BE9 /* Gitathon_Quiz_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
