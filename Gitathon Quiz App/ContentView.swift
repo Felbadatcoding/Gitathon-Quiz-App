@@ -10,11 +10,11 @@ import SwiftUI
 struct ContentView: View {
     
     var questions = [Question(title: "What day is it?",
-                              option1: "Monday",
+                              option1: "Thursday",
                               option2: "Friday",
                               option3: "Wednesday",
                               option4: "Saturday",
-                              correctOption: 4),
+                              correctOption: 1),
                      Question(title: "What framework are we using?",
                               option1: "UIKit",
                               option2: "SwiftUI",
