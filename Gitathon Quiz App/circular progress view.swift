@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct circular_progress_view: View {
+struct circularProgressView: View {
     
     var progress: CGFloat
     
@@ -31,6 +31,6 @@ struct circular_progress_view: View {
 
 struct circular_progress_view_Previews: PreviewProvider {
     static var previews: some View {
-        circular_progress_view(progress: 2)
+        circularProgressView(progress: 2)
     }
 }
